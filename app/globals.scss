@@ -136,3 +136,25 @@ body {
   border-radius: 6px;
   gap: 64px;
 }
+
+.cpHeader {
+  align-items: center;
+  background-color: #00ffd2;
+  background-image: url('/CP-pics/cpHeader.svg');
+  background-position: 0;
+  background-repeat: no-repeat;
+  color: #000;
+  display: flex;
+  font-size: 24px;
+  height: 40px;
+  justify-content: center;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+  z-index: 1;
+  box-sizing: border-box;
+  word-break: break-word;
+}

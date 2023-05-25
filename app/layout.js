@@ -1,4 +1,5 @@
 import './globals.scss';
+import './CPFontStyles.scss';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 
@@ -15,8 +16,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="navigationbar">
-          <Link href="/">Home</Link>
+        <nav className="cpHeader">
+          <Link href="/">
+            <h2 className="h2.cyberpunk.glitched">Home</h2>
+          </Link>
           <br />
           <Link href="products/livestock">Livestock</Link>
           <br />
