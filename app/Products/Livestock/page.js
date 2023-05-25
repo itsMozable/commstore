@@ -5,19 +5,17 @@ import { lsExhibits } from '../../../database/finalExhibits';
 export default function LivestockPage() {
   return (
     <main className="lsMain">
-      <h1 class="cyberpunk">Samurai Livestock</h1>
+      <h1 className="cyberpunk">Samurai Livestock</h1>
       <h2>something to eat - something to fight</h2>
-
-      {lsExhibits.map((exhibit) => {
+      {lsExhibits.map((exhibits) => {
         return (
-          <div key={`Exhibit-div-${exhibit.id}`}>
-            <Link
-              href={`/Products/Livestock/${exhibit.id}`}
-              data-test-id={`product-${exhibit.id}`}
-            >
-              {exhibit.name};
+          <div key={`Exhibit-div-${exhibits.Id}`}>
+            <Link href={`/products/${exhibits.name}`}>
+              {' '}
+              <br />
+              {exhibits.name} {exhibits.type}{' '}
               <Image
-                src={exhibit.img}
+                src={exhibits.img}
                 width={200}
                 height={200}
                 alt="Enslaved Exhibit"

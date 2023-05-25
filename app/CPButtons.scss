@@ -57,6 +57,11 @@ a.cyberpunk2077.blue {
   --background-color: #136377;
 }
 
+button.cyberpunk2077.redGlow,
+a.cyberpunk2077.blue {
+  --background-color: var(--red-glow);
+}
+
 button.cyberpunk2077:after,
 a.cyberpunk2077:after {
   content: "you've been warned";

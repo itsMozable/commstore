@@ -18,9 +18,8 @@ body {
   justify-content: space-between;
   align-items: left;
   flex-direction: column;
-  /*   background-color: black;
+  /* background-color: black;
   background-image: url('/CP-pics/background_clean.png'); */
-  background-size: cover;
   background-repeat: no-repeat;
 }
 // Menu Designs
@@ -58,7 +57,7 @@ body {
   margin: 15px 0px;
   overflow: hidden;
   width: 200px;
-  height: 54.5px;
+  height: 100px;
   clip-path: polygon(350px 0px, 350px 29px, 250px 57px, 0px 57px, 0px 0px);
   /* font */
   color: var(--yellow);
@@ -134,6 +133,6 @@ body {
   width: 50%;
   padding: 1rem 2rem;
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+  border-radius: 6px;
   gap: 64px;
 }

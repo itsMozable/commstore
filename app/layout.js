@@ -14,21 +14,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* Favicon Placeholder */}
-      <link rel="icon" href="public/favicon.ico" sizes="any" />
-      {/* Favicon Placeholder */}
-      <header className={inter.className}>
-        <body>
-          <nav className="navigationbar">
-            <Link href="/">Home</Link>
-            <br />
-            <Link href={'Products/SamuraiSale'}>Sale</Link>
-            <br />
-            <Link href={'Products/Livestock'}>Livestock</Link>
-          </nav>
-          {children}
-        </body>
-      </header>
+      <body className={inter.className}>
+        <nav className="navigationbar">
+          <Link href="/">Home</Link>
+          <br />
+          <Link href="products/livestock">Livestock</Link>
+          <br />
+          <Link href="products/samuraiSale">Sale</Link>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }

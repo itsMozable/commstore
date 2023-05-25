@@ -1,6 +1,11 @@
+// only run on Server component !
+/* import fs from 'node:fs';
+
+fs.readFile('./app.page.js', () => {}); */
+
 export const lsExhibits = [
   {
-    id: 1,
+    Id: 1,
     name: 'Exhibit-1',
     type: 'Pokemon',
     price: 3500,
@@ -8,7 +13,7 @@ export const lsExhibits = [
     alt: 'Enslaved Exhibit',
   },
   {
-    id: 2,
+    Id: 2,
     name: 'Exhibit-2',
     type: 'Pokemon',
     price: 6500,
@@ -16,7 +21,7 @@ export const lsExhibits = [
     alt: 'Enslaved Exhibit',
   },
   {
-    id: 3,
+    Id: 3,
     name: 'Exhibit-3',
     type: 'Pokemon',
     price: 9000,
@@ -24,7 +29,7 @@ export const lsExhibits = [
     alt: 'Enslaved Exhibit',
   },
   {
-    id: 4,
+    Id: 4,
     name: 'Exhibit-4',
     type: 'Pokemon',
     price: 20000,
@@ -32,3 +37,6 @@ export const lsExhibits = [
     alt: 'Enslaved Exhibit',
   },
 ];
+export function getExhibitsByName(name) {
+  return lsExhibits.find((exhibit) => exhibit.name === name);
+}
