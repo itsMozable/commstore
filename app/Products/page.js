@@ -14,10 +14,10 @@ export default function ProductsPage() {
       <h2>Bigger - Better - Stronger</h2>
       {lsExhibits.map((exhibits) => {
         return (
-          <div key={`Exhibit-div-${exhibits.Id}`}>
-            <Link href={`/products/${exhibits.Id}`}> {exhibits.Id} </Link>
+          <div key={`Exhibit-div-${exhibits.id}`}>
+            <Link href={`/products/${exhibits.id}`}> {exhibits.id} </Link>
             <Image
-              src={exhibits.Id}
+              src={exhibits.img}
               width={200}
               height={200}
               alt="Enslaved Exhibit"
