@@ -21,7 +21,6 @@ export default function HomePage() {
           </li>
         </ul>
       </section>
-      <CPButtonCart />
     </main>
   );
 }

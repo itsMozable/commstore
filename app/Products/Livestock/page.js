@@ -11,19 +11,22 @@ export default function LivestockPage() {
       {lsExhibits.map((exhibits) => {
         return (
           <div key={`Exhibit-div-${exhibits.id}`}>
-            <Link href={`/products/${exhibits.id}`}>
+            <Link
+              href={`/products/${exhibits.id}`}
+              data-test-id={`product-${exhibits.id}`}
+            >
               {' '}
               <br />
-              {exhibits.name} {': '}
-              {exhibits.type}{' '}
               <Image
                 src={exhibits.img}
                 width={200}
                 height={200}
                 alt="Enslaved Exhibit"
-              />
-              <CPButtonCart />
+              />{' '}
+              {exhibits.name} {': '}
+              {exhibits.type}{' '}
             </Link>
+            <CPButtonCart />
           </div>
         );
       })}

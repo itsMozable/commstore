@@ -15,18 +15,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <header>
         <nav className="cpHeader">
-          <Link href="/">
-            <h2 className="h2.cyberpunk.glitched">Home</h2>
+          <Link href="/">Home</Link>
+          <br />
+          <Link href="products/livestock" data-test-id="products-link">
+            Livestock
           </Link>
           <br />
-          <Link href="products/livestock">Livestock</Link>
-          <br />
           <Link href="products/samuraiSale">Sale</Link>
-        </nav>
+          <br />
+          <Link href="products/cart">Cart</Link>
+          <br />
+        </nav>{' '}
         {children}
-      </body>
+      </header>
+      <body className={inter.className}></body>
+      <footer></footer>
     </html>
   );
 }

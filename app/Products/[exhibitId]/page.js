@@ -13,19 +13,21 @@ export default function ProductIdPage({ params }) {
   }
   return (
     <main>
-      <h1>{singleExhibit.exhibitId}</h1>
+      {' '}
+      <h1>{singleExhibit.name}</h1>
       <Image
-        /* src={`/lsExhibits/${singleExhibit.img}.png`} */
+        data-test-id="product-image"
         src={singleExhibit.img}
         width={200}
         height={200}
         alt="Enslaved Exhibit"
       />
       <br />
-      This is a Rare {singleExhibit.type} with a Value of {singleExhibit.price}{' '}
+      <p data-test-id="product-price">
+        This is a Rare {singleExhibit.type} with a Value of{' '}
+        {singleExhibit.price}{' '}
+      </p>
       Eddies ! <br />
-      <h1>Samurai Livestock</h1>
-      <h2>something to eat - something to fight</h2>
     </main>
   );
 }
