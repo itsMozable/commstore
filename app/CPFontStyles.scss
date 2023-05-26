@@ -25,7 +25,8 @@ h2.cyberpunk:before {
   left: 2px;
   width: 50%;
   height: 10px;
-  background-color: var(--red-glow);
+  background-color: var(--purple-color);
+
   clip-path: polygon(
     0px 0px,
     85px 0px,
@@ -46,11 +47,12 @@ h1.cyberpunk.glitched {
 
 h2.cyberpunk.glitched {
   animation-name: h1glitched;
-  animation-duration: calc(var(--glitched-duration) * 1.7);
+  animation-duration: calc(var(--glitched-duration) * 2);
   animation-iteration-count: infinite;
   animation-direction: reverse;
   animation-timing-function: linear;
 }
+
 @keyframes h1glitched {
   0% {
     transform: skew(-20deg);

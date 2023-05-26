@@ -1,7 +1,17 @@
 :root {
   --yellow: #f7f500;
   --blue: #61e4fa;
+  --red: rbga(211, 87, 91, 0.81);
   --red-glow: rgba(211, 87, 91, 0.91);
+  --yellow-color: #f9f002;
+  --yellow-color-opacity: #f9f00242;
+  --orange-color: #ff9800;
+  --border-color: #8ae66e;
+  --red-color: #ff003c;
+  --blue-color: #0c5f74;
+  --green-color: #298d29;
+  --purple-color: purple;
+  --neon-color: #39ff14;
 }
 
 * {
@@ -9,20 +19,21 @@
   padding: 0;
   font-family: 'Advent Pro';
   color: var(--yellow);
+  text-decoration: none;
 }
 
 body {
-  padding: 3rem;
-  width: 50%;
+  padding: 0.5rem;
   display: flex;
-  justify-content: space-between;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   background-color: black;
   background-image: url('/CP-pics/background_clean.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 // Menu Designs
 .menu {
   display: flex;
@@ -40,7 +51,7 @@ body {
   padding: 5px;
   font-family: Cyberpunk;
   font-size: 2.5rem;
-  color: var(--blue);
+  text-shadow: 5px 5px 5px var(--purple-color);
 }
 
 .menu ul {
@@ -124,7 +135,7 @@ body {
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  justify-content: space-between;
 }
 
 .navigationbar {
@@ -140,23 +151,23 @@ body {
 
 .cpHeader {
   align-items: center;
-  background-color: #00ffd2;
+  background-color: black;
   background-image: url('/CP-pics/cpHeader.svg');
-  background-position: 0;
+  background: position 0;
   background-repeat: no-repeat;
-  color: var(--red-glow);
   display: flex;
   font-size: 1rem;
   height: 40px;
   justify-content: center;
-  line-height: 1;
+  line-height: 1.5;
   position: relative;
   text-align: center;
-  text-decoration: none;
   text-transform: uppercase;
   width: 100%;
   z-index: 1;
   box-sizing: border-box;
-  word-break: break-word;
+  padding: 1rem 2rem;
+  word-break: keep-all;
   gap: 64px;
+  text-shadow: 5px 5px 5px var(--purple-color);
 }
