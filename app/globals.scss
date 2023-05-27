@@ -138,7 +138,7 @@ body {
   justify-content: space-between;
 }
 
-.navigationbar {
+/* .navigationbar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,11 +147,11 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 6px;
   gap: 64px;
-}
+} */
 
 .cpHeader {
   align-items: center;
-  background-color: black;
+  background-color: transparent;
   background-image: url('/CP-pics/cpHeader.svg');
   background: position 0;
   background-repeat: no-repeat;
@@ -169,5 +169,6 @@ body {
   padding: 1rem 2rem;
   word-break: keep-all;
   gap: 64px;
-  text-shadow: 5px 5px 5px var(--purple-color);
+  text-shadow: 4px 5px 4px var(--purple-color);
+  margin-bottom: 1rem;
 }

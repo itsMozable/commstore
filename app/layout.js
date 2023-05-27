@@ -26,12 +26,11 @@ export default function RootLayout({ children }) {
           <Link href="products/samuraiSale">Sale</Link>
           <br />
           <Link href="products/cart">Cart</Link>
-          <br />
         </nav>{' '}
         {children}
       </header>
-      <body className={inter.className}></body>
-      <footer></footer>
+      <body className={inter.className} />
+      <footer />
     </html>
   );
 }

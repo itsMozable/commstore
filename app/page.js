@@ -8,6 +8,7 @@ export default function HomePage() {
     <main className="hpMain">
       <section className="menu">
         <h1>Samurai Warehouse</h1>
+        <br />
         <ul>
           <li>
             <Link href="products/livestock">
