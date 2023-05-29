@@ -2,6 +2,7 @@ import './globals.scss';
 import './CPFontStyles.scss';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import cookieBanner from './CookieBanner.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <header>
+      <body className={inter.className}>
         <nav className="cpHeader">
           <Link href="/">Home</Link>
           <br />
@@ -25,12 +26,13 @@ export default function RootLayout({ children }) {
           <br />
           <Link href="products/samuraiSale">Sale</Link>
           <br />
-          <Link href="products/cart">Cart</Link>
+          <Link href="/cart">Cart</Link>
+          {Math.floor(Math.random() * 10)}
         </nav>{' '}
         {children}
-      </header>
-      <body className={inter.className} />
-      <footer />
+        <footer> See you in the Afterlife Mozi </footer>
+      </body>
+      <cookieBanner />
     </html>
   );
 }

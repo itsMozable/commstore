@@ -1,12 +1,16 @@
-import '../../CPFontStyles.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getExhibitsById } from '../../../database/finalExhibits';
+import CPButtonPurple from '../../CookieBanner.module.scss';
+import AddToCartForm from '../app/products/[exhibitId]/AddToCartForm';
+import { getExhibitsById } from '../database/finalExhibits';
 
 export const dynamic = 'force-dynamic';
 
-export default function ProductIdPage({ params }) {
-  const singleExhibit = getExhibitsById(Number(params.exhibitId)); // Covert Strng into a number
+export default function ProductIdPage({ Props }) {
+  const singleExhibit = getExhibitsById(Number(props.params.exhibitId));
+
+  // Covert String into a number
 
   if (!singleExhibit) {
     notFound(<h1>Sorry, no exhibit found</h1>);
@@ -28,6 +32,8 @@ export default function ProductIdPage({ params }) {
         {singleExhibit.price}{' '}
       </p>
       Eddies ! <br />
+      <CPButtonPurple />
+      <AddToCartForm exhibit={singleExhibit} />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 :root {
   --yellow: #f7f500;
   --blue: #61e4fa;
-  --red: rbga(211, 87, 91, 0.81);
+  --red: rgba(211, 87, 91, 0.81);
   --red-glow: rgba(211, 87, 91, 0.91);
   --yellow-color: #f9f002;
   --yellow-color-opacity: #f9f00242;
@@ -28,8 +28,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: black;
-  background-image: url('/CP-pics/background_clean.png');
+  /*background-color: black;
+  background-image: url('/CP-pics/background_clean.png'); */
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -138,37 +138,35 @@ body {
   justify-content: space-between;
 }
 
-/* .navigationbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 6px;
-  gap: 64px;
-} */
-
 .cpHeader {
   align-items: center;
-  background-color: transparent;
+  background-color: var(--red-glow);
   background-image: url('/CP-pics/cpHeader.svg');
   background: position 0;
   background-repeat: no-repeat;
+  box-sizing: border-box;
   display: flex;
   font-size: 1rem;
+  gap: 1rem;
   height: 40px;
   justify-content: center;
   line-height: 1.5;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
   position: relative;
   text-align: center;
+  text-shadow: 4px 5px 4px var(--purple-color);
   text-transform: uppercase;
   width: 100%;
-  z-index: 1;
-  box-sizing: border-box;
-  padding: 1rem 2rem;
   word-break: keep-all;
-  gap: 64px;
-  text-shadow: 4px 5px 4px var(--purple-color);
-  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+.div {
+  display: flex;
+  flex-direction: flex-column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  width: 40%;
 }

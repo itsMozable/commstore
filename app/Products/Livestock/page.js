@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { lsExhibits } from '../../../database/finalExhibits';
-import CPButtonCart from '../../CPButtonCart';
-import CPButtonPurple from '../../CPButtonCart';
 
 export default function LivestockPage() {
   return (
@@ -27,7 +25,6 @@ export default function LivestockPage() {
               {exhibits.name} {': '}
               {exhibits.type}{' '}
             </Link>
-            <CPButtonPurple />
           </div>
         );
       })}

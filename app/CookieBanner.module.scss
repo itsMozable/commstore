@@ -1,0 +1,22 @@
+.cookieBanner {
+  align-items: center;
+  background-color: black;
+  border: 4px solid var(--yellow);
+  border-radius: 0;
+  color: var(--yellow);
+  padding: 16px 24px 32px;
+  display: block;
+  margin-left: 535px;
+  margin-top: 107px;
+  opacity: 1;
+  width: auto;
+  height: auto;
+
+  justify-content: center;
+  width: 100vw;
+  transition: all 1.5s ease-in-out;
+
+  div {
+    background-color: var(--blue);
+  }
+}

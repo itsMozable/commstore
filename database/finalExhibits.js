@@ -2,6 +2,13 @@
 /* import fs from 'node:fs';
 
 fs.readFile('./app.page.js', () => {}); */
+/* type lsExhibits = {
+  id: number,
+  name: string,
+  category: string,
+  price: number,
+  description: string,
+}; */
 
 export const lsExhibits = [
   {

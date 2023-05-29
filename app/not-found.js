@@ -4,6 +4,9 @@ export const rootNotFoundMetaData = {
 };
 export default function RootNotFound() {
   return (
-    <div>404 - Get lost copper-this Page has cleaned minutes ago - 404</div>
+    <div>
+      404 Not Found- Get lost copper-this Page has cleaned minutes ago - Not
+      Found 404
+    </div>
   );
 }
