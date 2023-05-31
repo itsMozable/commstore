@@ -12,7 +12,7 @@ export default function RemoveItems({ exhibits }) {
           router.refresh();
           await removeItem(exhibits);
         }}
-      ></button>
+      />
     </div>
   );
 }

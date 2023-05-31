@@ -7,7 +7,8 @@ export const metadata = {
   description: 'For this life or another, we will meet again',
 };
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const exhibits = await getExhibits();
   return (
     <main className="ppMain">
       <h1 className="cyberpunk">Samurai Upgrades</h1>

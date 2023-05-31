@@ -8,8 +8,9 @@ export default function CPButtonPurple() {
     <button
       className="cyberpunk2077 purple"
       data-test-id="product-add-to-cart"
-      onClick={() => {
+      formAction={async () => {
         router.refresh();
+        await addToCart(props.exhibitId, quantity);
       }}
     >
       Add to cart

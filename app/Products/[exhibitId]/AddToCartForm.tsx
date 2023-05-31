@@ -1,12 +1,18 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-/* import { useState } from 'react'; */
+import { ChangeEvent, useState } from 'react';
 import { addToCart } from './actions';
 
-export default function AddToCartForm(props) {
-  const [quantity, setQuantity] = useState(' ');
+type Props = { exhibitId: number };
+
+export default function AddToCartForm(props: Props) {
+  const [quantity, setQuantity] = useState(1);
   const router = useRouter();
+
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    setQuantity(Number(event.currentTarget.value));
+  }
+
   return (
     /* Warning: in order to use Server Action you need to update the next,js config with serverActions:true,
     when using Server actions we ont need prevent the default of the form */
@@ -18,9 +24,7 @@ export default function AddToCartForm(props) {
         type="number"
         min="1"
         value={quantity}
-        onChange={(event) => {
-          setQuantity(event.currentTarget.value);
-        }}
+        onChange={handleChange}
       />
       {/* Instead of using onClick we use formAction */}
 

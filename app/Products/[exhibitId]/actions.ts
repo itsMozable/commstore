@@ -1,14 +1,13 @@
 'use server';
 
 import { cookies } from 'next/headers';
-import { getCookie } from '../../../utility/cookies';
-import { parseJson } from '../../../utility/json';
+import { getCookie } from '../../../util/cookies';
+import { parseJson } from '../../../util/json';
 
-export async function addToCart(exhibitId, quantity) {
+export async function addToCart(exhibitId: number, quantity: number) {
   /* 1. get the current cookie
   this get the cookies from the request headers */
   const exhibitQuantityCookie = getCookie('cart');
-  console.log('Cookie', exhibitQuantityCookie);
   /* we parse the cookies */
   const exhibitQuantities = !exhibitQuantityCookie
     ? /* case a: cookie is undefined
@@ -18,7 +17,7 @@ export async function addToCart(exhibitId, quantity) {
     : parseJson(exhibitQuantityCookie);
   /* we edit the object */
   /* we get the object for the fruit in cookies or undefined */
-  const exhibitToUpdate = exhibitQuantities.find((exhibitQuantity) => {
+  const exhibitToUpdate = exhibitQuantities?.find((exhibitQuantity) => {
     return exhibitQuantity.id === exhibitId;
   });
 
@@ -33,7 +32,7 @@ export async function addToCart(exhibitId, quantity) {
     /* case c: the cookie is defined but  have the fruit in the action
     if we are in fruit 1 doesn't
     [{id:2, comment:'abc}] */
-    exhibitQuantities.push({
+    exhibitQuantities!.push({
       /* we need insert the fruit comment */
       id: exhibitId,
       quantity: Number(quantity),

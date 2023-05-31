@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getExhibitsById } from '../../../database/finalExhibits';
-import CPButtonPurple from '../../CookieBanner.module.scss';
 import AddToCartForm from './AddToCartForm';
 
 export const dynamic = 'force-dynamic';
@@ -16,8 +15,14 @@ type Props = {
   params: { exhibitId: string };
 };
 
+export type CookieQuantityItem = {
+  id: number;
+  quantity?: number;
+};
+
 export default async function SingleProductPage(props: Props) {
   const singleExhibit = await getExhibitsById(Number(props.params.exhibitId));
+  /* const exhibits = await getExhibits(); */
 
   if (!singleExhibit) {
     notFound();
@@ -39,7 +44,7 @@ export default async function SingleProductPage(props: Props) {
         {singleExhibit.price}{' '}
       </p>
       Eddies ! <br />
-      {<AddToCartForm exhibit={singleExhibit} />}
+      <AddToCartForm exhibitId={singleExhibit.id} />
     </main>
   );
 }

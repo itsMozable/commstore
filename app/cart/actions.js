@@ -1,8 +1,8 @@
 'use server';
 
 import { cookies } from 'next/headers';
-import { getCookie } from '../../utility/cookies';
-import { parseJson } from '../../utility/json';
+import { getCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
 
 // remove product from cart
 export async function removeItem(item) {
