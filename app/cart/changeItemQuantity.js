@@ -14,7 +14,9 @@ export default function ChangeItemQuantity({ exhibits }) {
       >
         -
       </button>
-      {exhibits.quantity}
+      <span data-test-id={`cart-product-quantity-${exhibits.id}`}>
+        {exhibits.quantity}
+      </span>
       <button
         formAction={async () => {
           router.refresh();
@@ -23,6 +25,7 @@ export default function ChangeItemQuantity({ exhibits }) {
       >
         +
       </button>
+      Peez oida
     </div>
   );
 }

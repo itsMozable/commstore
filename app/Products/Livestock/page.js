@@ -18,8 +18,8 @@ export default function LivestockPage() {
               <br />
               <Image
                 src={exhibits.img}
-                width={200}
-                height={200}
+                width={150}
+                height={150}
                 alt="Enslaved Exhibit"
               />{' '}
               {exhibits.name} {': '}

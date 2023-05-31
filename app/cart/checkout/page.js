@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import cartPage from '../../cart/page';
+
 export default function CheckoutPage() {
   return (
     <div>
@@ -24,7 +27,6 @@ export default function CheckoutPage() {
             <input
               type="email"
               data-test-id="checkout-email"
-              // className={styles.emailInput}
               placeholder="me@email.com"
             />
           </label>
@@ -69,18 +71,20 @@ export default function CheckoutPage() {
               <label>
                 <input
                   type="date"
-                  data-test-id="checkout-credit-card"
+                  data-test-id="checkout-expiration-date"
                   className={' '}
                 />
               </label>
               <label>
-                <input data-test-id="checkout-credit-card" className={' '} />
+                <input data-test-id="checkout-security-code" className={' '} />
               </label>
             </div>
           </div>
-          <button data-test-id="checkout-confirm-order" href="/thankYou">
+          <span>Total : {cartPage.totalPrice}</span>
+          <br />
+          <Link data-test-id="checkout-confirm-order" href="/../thankYou">
             Confirm Order
-          </button>
+          </Link>
         </form>
       </div>
 

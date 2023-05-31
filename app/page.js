@@ -14,6 +14,11 @@ export default function HomePage() {
               <h2 className="cyberpunk glitched">Livestock</h2>
             </Link>
           </li>
+          <li>
+            <Link href="cart">
+              <h2 className="cyberpunk glitched">Cart</h2>
+            </Link>
+          </li>
         </ul>
       </section>
     </main>

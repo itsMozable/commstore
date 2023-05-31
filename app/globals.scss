@@ -1,6 +1,6 @@
 :root {
   --yellow: #f7f500;
-  --blue: #61e4fa;
+  --blue: rgb(97, 228, 250);
   --red: rgba(211, 87, 91, 0.81);
   --red-glow: rgba(211, 87, 91, 0.91);
   --yellow-color: #f9f002;
@@ -28,8 +28,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /*background-color: black;
-  background-image: url('/CP-pics/background_clean.png'); */
+  background-color: black;
+  /*  background-image: url('/CP-pics/background_clean.png'); */
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -50,7 +50,6 @@ body {
   font-weight: 700;
   padding: 5px;
   font-family: Cyberpunk;
-  font-size: 2.5rem;
   text-shadow: 5px 5px 5px var(--purple-color);
 }
 
@@ -64,7 +63,6 @@ body {
   cursor: pointer;
   /* layout */
   position: relative;
-  color: #ff9800;
   padding: 10px;
   margin: 15px 0px;
   overflow: hidden;
@@ -142,7 +140,6 @@ body {
   align-items: center;
   background-color: var(--red-glow);
   background-image: url('/CP-pics/cpHeader.svg');
-  background: position 0;
   background-repeat: no-repeat;
   box-sizing: border-box;
   display: flex;

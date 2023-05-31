@@ -1,6 +1,6 @@
 import './globals.scss';
 import './CPFontStyles.scss';
-import { Cookie, Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { CookieBanner } from './CookieBanner';
 
@@ -26,7 +26,9 @@ export default function RootLayout({ children }) {
           <br />
           <Link href="products/samuraiSale">Sale</Link>
           <br />
-          <Link href="/cart">Cart</Link>
+          <Link href="/cart" data-test-id="cart-link">
+            Cart
+          </Link>
           {Math.floor(Math.random() * 10)}
         </nav>{' '}
         {children}

@@ -3,7 +3,8 @@
   background-color: black;
   border: 4px solid var(--yellow);
   border-radius: 0;
-  color: var(--yellow);
+  box-shadow: 0 12px 44px 2px rgba(97, 228, 250, 0.82);
+  color: #fff;
   padding: 16px 24px 32px;
   display: block;
   margin-left: 535px;
@@ -11,12 +12,15 @@
   opacity: 1;
   width: auto;
   height: auto;
-
   justify-content: center;
-  width: 100vw;
   transition: all 1.5s ease-in-out;
-
-  div {
-    background-color: var(--blue);
-  }
+  text-rendering: geometricPrecision;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-repeat: repeat;
+  background-size: auto auto;
+  font-size: 0.5rem;
+  line-height: 1.25;
+  max-width: 574px;
+  text-align: left;
 }

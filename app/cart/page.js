@@ -1,15 +1,14 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { getExhibit, getExhibits } from '../../database/finalExhibits';
+import { lsExhibits } from '../../database/finalExhibits';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import { removeItem } from './actions';
 import ChangeItemQuantity from './changeItemQuantity';
+import RemoveItems from './removeItems';
 
 export const dynamic = 'force-dynamic';
 
 export default async function CartPage() {
-  const exhibits = await getExhibits();
+  const exhibits = await lsExhibits;
   const exhibitQuantityCookie = getCookie('cart');
   const exhibitQuantities = !exhibitQuantityCookie
     ? []
@@ -32,45 +31,52 @@ export default async function CartPage() {
     (accumulator, exhibit) => accumulator + exhibit.price * exhibit.quantity,
     0,
   );
-
   return (
     <main className="hpMain">
       {exhibitsInCart.length === 0 ? (
         <p>There are no exhibits in your cart</p>
       ) : (
-        <div data-test-id="cart-product-<product id>">
+        <div>
           {exhibitsInCart.map((exhibit) => {
-            const total = exhibits.quantity * exhibits.price;
+            const totalPerExhibit = exhibit.quantity * exhibit.price;
             return (
-              <div key={`product-div-${exhibits.id}`}>
-                <Link href={`/products/${exhibits.id}`}>{exhibits.name}</Link>
-                <Link href={`/products/${exhibits.id}`}>
-                  <p>Eddies {exhibits.price}</p>
+              <div
+                key={`product-div-${exhibit.id}`}
+                data-test-id={`cart-product-${exhibit.id}`}
+              >
+                <Link href={`/products/${exhibit.id}`}>
+                  <h1 className="cyberpunk2077">{exhibit.name}</h1>
                 </Link>
-
-                <form data-test-id="cart-product-quantity-<product id>">
-                  <ChangeItemQuantity product={exhibit} />
-                </form>
-
-                <div>Eddies{totalPrice}</div>
-
-                <form data-test-id="cart-product-remove-<product id>">
-                  <removeItem product={exhibit} />
+                <img
+                  src={exhibit.img}
+                  height="150px"
+                  width="150px"
+                  alt={exhibit.name}
+                />
+                <p>Cost for this Exhibit : {exhibit.price} Eddies</p>
+                <form>
+                  <ChangeItemQuantity exhibits={exhibit} />
                 </form>
 
                 <div>
-                  <h2>Subtotal: €{totalPrice}</h2>
-                  <div data-test-id="cart-total" />
-                  <div>
-                    <Link href="/products">Continue shopping</Link>
-                    <Link href="/cart/checkout" data-test-id="cart-checkout">
-                      Checkout
-                    </Link>
-                  </div>
+                  <h2>Subtotal: {totalPerExhibit} Eddies</h2>
                 </div>
+                <form data-test-id="cart-product-remove-<product id>">
+                  <RemoveItems exhibits={exhibit} />
+                </form>
               </div>
             );
           })}
+          <h2 data-test-id="cart-total">Total{totalPrice}</h2>
+          <div>
+            <Link href="/products/livestock">Continue shopping</Link>
+            <br />
+            <button>
+              <Link href="/cart/checkout" data-test-id="cart-checkout">
+                Checkout
+              </Link>
+            </button>
+          </div>
         </div>
       )}
     </main>
