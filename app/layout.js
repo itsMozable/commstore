@@ -1,8 +1,8 @@
 import './globals.scss';
 import './CPFontStyles.scss';
-import { Inter } from 'next/font/google';
+import { Cookie, Inter } from 'next/font/google';
 import Link from 'next/link';
-import cookieBanner from './CookieBanner.module.scss';
+import { CookieBanner } from './CookieBanner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,9 +30,9 @@ export default function RootLayout({ children }) {
           {Math.floor(Math.random() * 10)}
         </nav>{' '}
         {children}
+        <CookieBanner />
         <footer> See you in the Afterlife Mozi </footer>
       </body>
-      <cookieBanner />
     </html>
   );
 }
