@@ -27,7 +27,7 @@ export default function CheckoutPage() {
             <input
               type="email"
               data-test-id="checkout-email"
-              placeholder="me@email.com"
+              placeholder="Alias@Nightcity.com"
             />
           </label>
 
