@@ -87,7 +87,6 @@ export default function CheckoutPage() {
           </Link>
         </form>
       </div>
-
       <div className={' '} />
     </div>
   );
