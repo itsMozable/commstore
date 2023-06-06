@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getExhibits } from '../../database/exhibits';
+import { getExhibits } from '../../../database/exhibits';
 
 export const metadata = {
   title: 'Welcome Samurai | For this life or another',
@@ -16,7 +16,12 @@ export default async function ProductsPage() {
       {exhibits.map((exhibits) => {
         return (
           <div key={`Exhibit-div-${exhibits.id}`}>
-            <Link href={`/products/${exhibits.id}`}> {exhibits.name} </Link>
+            <Link
+              href={`/exhibit-management-naive-dont-copy/read/${exhibits.id}`}
+            >
+              {' '}
+              {exhibits.name}{' '}
+            </Link>
             <Image
               src={exhibits.img}
               width={200}

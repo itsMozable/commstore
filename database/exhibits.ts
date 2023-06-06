@@ -69,12 +69,60 @@ export const createExhibit = cache(
     img: string,
     alt: string,
   ) => {
-    const [exhibit] = await sql<exhibit[]>`
-    INSERT INTO exhibits
-    (name, type, price, img, alt)
-    VALUES
-    (${name}, ${type}, ${price}, ${img}, ${alt})
-    RETURNING *`;
+    const [exhibit] = await sql<Exhibit[]>`
+  INSERT INTO exhibits (name, type, price, img, alt) VALUES (${name}, ${type}, ${price}, ${img}, ${alt}) RETURNING *`;
     return exhibit;
   },
 );
+
+export const deleteExhibitById = cache(async (id: number) => {
+  const [exhibit] =
+    await sql`<Exhibit[]>DELETE FROM exhibits WHERE id = ${id} RETURNING *`;
+  return exhibit;
+});
+
+export const updateExhibitById = cache(
+  async (
+    id: number,
+    name: string,
+    type: string,
+    price: number,
+    img: string,
+    alt: string,
+  ) => {
+    const [exhibit] = await sql<Exhibit[]>`
+  UPDATE exhibits SET name = ${name}, type = ${type}, price = ${price}, img = ${img}, alt = ${alt} WHERE id = ${id} RETURNING *`;
+    return exhibit;
+  },
+);
+
+type exhibitFoods = {
+  exhibit_id: number;
+  exhibit_name: string;
+  exhibit_type: string;
+  exhibit_price: number;
+  exhibit_img: string;
+  exhibit_alt: string;
+  food_id: number;
+  food_name: string;
+  food_type: string;
+};
+
+export const getExhibitsWithFood = cache(async (id: number) => {
+  const exhibitFoods = await sql<exhibitFoods[]>`
+    SELECT exhibits.id AS exhibit_id,
+    exhibits.name AS exhibit_name,
+    exhibits.type AS exhibit_type,
+    exhibits.price AS exhibit_price,
+    exhibits.img AS exhibit_img,
+    exhibits.alt AS exhibit_alt,
+    foods.id AS food_id,
+    foods.name AS food_name,
+    foods.type AS food_type,
+     FROM exhibits
+    INNER JOIN exhibits_food ON exhibits.id = exhibits_food.exhibitId
+    INNER JOIN foods ON foods.id = exhibits_foods.food_id
+    WHERE exhibits.id = ${id}`;
+
+  return exhibitFoods;
+});
