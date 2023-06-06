@@ -1,6 +1,5 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import CPButtonPurple from '../buttons/CPButtonCart';
 import { removeItem } from './actions';
 
 export default function RemoveItems({ exhibits }) {

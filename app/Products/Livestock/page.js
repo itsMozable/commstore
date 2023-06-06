@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { lsExhibits } from '../../../database/finalExhibits';
+import { lsExhibits } from '../../../database/exhibits';
 
 export default function LivestockPage() {
   return (

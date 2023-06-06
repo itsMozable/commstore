@@ -32,6 +32,7 @@ export default function AddToCartForm(props: Props) {
 
       {/* formAction allows to run server action inside of client component */}
       <button
+        className="cartLink"
         data-test-id="product-add-to-cart"
         formAction={async () => {
           router.refresh();

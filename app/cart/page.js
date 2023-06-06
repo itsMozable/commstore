@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { lsExhibits } from '../../database/finalExhibits';
+import { lsExhibits } from '../../database/exhibits';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import ChangeItemQuantity from './changeItemQuantity';

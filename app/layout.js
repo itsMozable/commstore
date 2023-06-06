@@ -3,6 +3,7 @@ import './CPFontStyles.scss';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { CookieBanner } from './CookieBanner';
+import AddToCartForm from './products/[exhibitId]/AddToCartForm';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,9 +28,8 @@ export default function RootLayout({ children }) {
           <Link href="products/samuraiSale">Sale</Link>
           <br />
           <Link href="/cart" data-test-id="cart-link">
-            Cart
+            🛒
           </Link>
-          {Math.floor(Math.random() * 10)}
         </nav>{' '}
         {children}
         <CookieBanner />

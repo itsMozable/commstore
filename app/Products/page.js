@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { lsExhibits } from '../../database/finalExhibits';
+import { getExhibits } from '../../database/exhibits';
 
 export const metadata = {
   title: 'Welcome Samurai | For this life or another',
@@ -13,7 +13,7 @@ export default async function ProductsPage() {
     <main className="ppMain">
       <h1 className="cyberpunk">Samurai Upgrades</h1>
       <h2>Bigger - Better - Stronger</h2>
-      {lsExhibits.map((exhibits) => {
+      {exhibits.map((exhibits) => {
         return (
           <div key={`Exhibit-div-${exhibits.id}`}>
             <Link href={`/products/${exhibits.id}`}> {exhibits.id} </Link>

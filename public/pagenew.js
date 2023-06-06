@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import CPButtonPurple from '../../CookieBanner.module.scss';
 import AddToCartForm from '../app/products/[exhibitId]/AddToCartForm';
-import { getExhibitsById } from '../database/finalExhibits';
+import { getExhibitsById } from '../database/exhibits';
 
 export const dynamic = 'force-dynamic';
 

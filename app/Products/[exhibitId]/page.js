@@ -1,28 +1,14 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getExhibitsById } from '../../../database/finalExhibits';
+import { getExhibitById } from '../../../database/exhibits';
 import AddToCartForm from './AddToCartForm';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata = {
-  title: { default: 'Samurai Warehouse' },
-  description: 'Everything at once',
-};
+export default async function ExhibitPage({ params }) {
+  /*   const singleExhibit = getExhibitById(Number(params.exhibitId)); */
 
-type Props = {
-  params: { exhibitId: string };
-};
-
-export type CookieQuantityItem = {
-  id: number;
-  quantity?: number;
-};
-
-export default async function SingleProductPage(props: Props) {
-  const singleExhibit = await getExhibitsById(Number(props.params.exhibitId));
-  /* const exhibits = await getExhibits(); */
+  const singleExhibit = await getExhibitById(Number(params.exhibitId));
 
   if (!singleExhibit) {
     notFound();
