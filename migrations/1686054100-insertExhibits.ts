@@ -35,10 +35,20 @@ export const exhibits = [
   },
 ];
 
+export type Exhibit = {
+  id: number;
+  name: string;
+  type: string;
+  price: number;
+  img: string;
+  alt: string;
+};
+
 export async function up(sql: Sql) {
   for (const exhibit of exhibits) {
     await sql`
-    INSERT INTO exhibits (name, type, price, img, alt) VALUES(${exhibit.name}, ${exhibit.type}, ${exhibit.price}, ${exhibit.img}, ${exhibit.alt})
+    INSERT INTO exhibits
+     (name, type, price, img, alt) VALUES(${exhibit.name}, ${exhibit.type}, ${exhibit.price}, ${exhibit.img}, ${exhibit.alt})
   `;
   }
 }

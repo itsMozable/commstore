@@ -2,7 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getExhibits } from '../../../database/exhibits';
 
-export default function LivestockPage() {
+export const dynamic = 'force-dynamic';
+
+export default async function LivestockPage() {
+  const lsExhibits = await getExhibits();
   return (
     <main className="lsMain">
       <h1 className="cyberpunk glitched">Samurai Livestock</h1>

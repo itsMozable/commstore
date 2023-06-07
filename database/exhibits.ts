@@ -1,5 +1,5 @@
 import { cache } from 'react';
-import { Exhibit } from '../migrations/1686053188-createTableExhibits';
+import { Exhibit } from '../migrations/1686054100-insertExhibits';
 import { sql } from './connect';
 
 //  This is coming from the database
@@ -51,7 +51,8 @@ export function getExhibitsById(id: number) {
 
 export const getExhibits = cache(async () => {
   const exhibits = await sql<Exhibit[]>`
-  SELECT * FROM exhibits`;
+  SELECT * FROM exhibits
+  `;
   return exhibits;
 });
 
