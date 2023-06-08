@@ -21,6 +21,23 @@
   color: var(--blue);
   text-decoration: none;
 }
+
+body {
+  padding: 0.5rem;
+  /* background-color: black; */
+  background-image: url('/CP-pics/background_clean.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  min-width: 1024px;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+}
+
 .cpHeader {
   align-items: center;
   background-color: var(--blue-color);
@@ -36,31 +53,11 @@
   margin-bottom: 1rem;
   padding: 1rem 2rem;
   position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1;
   text-align: center;
   text-shadow: 4px 5px 4px var(--purple-color);
   text-transform: uppercase;
   width: 100%;
   word-break: keep-all;
-  z-index: 1;
-}
-body {
-  padding: 0.5rem;
-  /* background-color: black; */
-  background-image: url('/CP-pics/background_clean.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  position: absolute;
-  min-width: 1024px;
-  min-height: 100%;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
 // Menu Designs
@@ -181,11 +178,300 @@ body {
   padding: 6rem;
   width: 40%;
 }
-image {
+// CP Buttons
+
+:root {
+  --glitched-duration: 0.9s;
+}
+
+body {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 6rem;
-  width: 40%;
+  flex-direction: column;
+  background-color: #f9f002;
+}
+
+button.cyberpunk2077,
+a.cyberpunk2077 {
+  --background-color: #ff003c;
+  --glitched-duration: 0.9s;
+  display: block;
+  border: none;
+  border-radius: 0%;
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Advent Pro', arial;
+  padding: 25px 65px;
+  margin: 10px;
+  position: relative;
+  color: #fff;
+  border-right: 3px solid #8ae66e;
+  clip-path: polygon(
+    -15px 0%,
+    calc(100% + 15px) 0%,
+    calc(100% + 15px) 100%,
+    20px 100%,
+    -15px calc(100% - 35px)
+  );
+  cursor: pointer;
+  background-color: var(--background-color);
+  outline: none;
+}
+
+button.cyberpunk2077:hover,
+a.cyberpunk2077:hover,
+button.cyberpunk2077:focus,
+a.cyberpunk2077:focus {
+  animation-name: hover;
+  animation-duration: var(--glitched-duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+button.cyberpunk2077.green,
+a.cyberpunk2077.green {
+  --background-color: #446d44;
+}
+
+button.cyberpunk2077.purple,
+a.cyberpunk2077.purple {
+  --background-color: purple;
+}
+
+button.cyberpunk2077.blue,
+a.cyberpunk2077.blue {
+  --background-color: #136377;
+}
+
+button.cyberpunk2077:after,
+a.cyberpunk2077:after {
+  content: 'R-25';
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  right: 25px;
+  padding: 2px 2px 0px 2px;
+  font-size: 0.6rem;
+  line-height: 9px;
+  color: #000;
+  background-color: #f9f002;
+  border-left: 2px solid #8ae66e;
+}
+
+button.cyberpunk2077:hover:after,
+a.cyberpunk2077:hover:after,
+button.cyberpunk2077:focus:after,
+a.cyberpunk2077:focus:after {
+  animation-name: hoverafter;
+  animation-duration: var(--glitched-duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+button.cyberpunk2077:before,
+a.cyberpunk2077:before {
+  --outside: 4px;
+  content: '';
+  position: absolute;
+  display: none;
+  background-color: var(--background-color);
+  width: calc(100% + (var(--outside) * 2));
+  height: 12px;
+  top: 0px;
+  left: calc(0px - 1px - var(--outside));
+  border-left: 2px solid #8ae66e;
+  border-right: 2px solid #8ae66e;
+}
+
+button.cyberpunk2077:hover:before,
+a.cyberpunk2077:hover:before,
+button.cyberpunk2077:focus:before,
+a.cyberpunk2077:focus:before {
+  display: block;
+  animation-name: hoverbefore;
+  animation-duration: var(--glitched-duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes hover {
+  0% {
+    transform: skew(0deg);
+  }
+  60% {
+    transform: skew(0deg);
+  }
+  61% {
+    transform: skew(10deg);
+  }
+  70% {
+    transform: skew(10deg);
+  }
+  71% {
+    transform: skew(0deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+@keyframes hoverbefore {
+  0% {
+    display: none;
+    top: 0px;
+  }
+  10% {
+    display: none;
+    top: 0px;
+  }
+  11% {
+    display: block;
+    top: 10px;
+    left: calc(0px - 0px - var(--outside));
+  }
+  29% {
+    top: 10px;
+  }
+  30% {
+    display: none;
+    top: 0px;
+  }
+  50% {
+    display: none;
+    top: 0px;
+  }
+  51% {
+    display: block;
+    top: 55px;
+    filter: blur(1px);
+    height: 22px;
+  }
+  90% {
+    display: block;
+    top: 55px;
+    height: 22px;
+  }
+  91% {
+    filter: blur(0px);
+    display: none;
+    top: 0px;
+    height: 12px;
+  }
+  100% {
+    display: none;
+    top: 0px;
+  }
+}
+
+@keyframes hoverafter {
+  0% {
+    right: 45px;
+  }
+
+  10% {
+    right: 45px;
+  }
+  11% {
+    right: 35px;
+  }
+  20% {
+    transform: skew(0deg);
+  }
+  21% {
+    transform: skew(-10deg);
+  }
+  40% {
+    transform: skew(-10deg);
+  }
+  41% {
+    transform: skew(0deg);
+  }
+  49% {
+    right: 35px;
+  }
+  50% {
+    right: 55px;
+  }
+
+  60% {
+    right: 55px;
+  }
+  61% {
+    right: 35px;
+  }
+  70% {
+    transform: skew(0deg);
+  }
+  71% {
+    transform: skew(10deg);
+  }
+  80% {
+    transform: skew(10deg);
+  }
+  81% {
+    transform: skew(0deg);
+  }
+  100% {
+    right: 35px;
+  }
+}
+
+// DP Symbol
+
+.deadpool {
+  --width: 3vw;
+  width: var(--width);
+  height: var(--width);
+  position: relative;
+  display: inline-block;
+
+  --color1: #ff1a21;
+  --color2: #fff;
+  --colorbg: #000;
+  --barwidth: calc(var(--width) * 0.09);
+  border-radius: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--colorbg) 0%,
+    var(--colorbg) calc(50% - (var(--barwidth) / 2) - 1px),
+    var(--color1) calc(50% - (var(--barwidth) / 2)),
+    var(--color1) calc(50% + (var(--barwidth) / 2)),
+    var(--colorbg) calc(50% + (var(--barwidth) / 2) + 1px),
+    var(--colorbg) 100%
+  );
+  border: var(--barwidth) solid var(--color1);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.deadpool::after,
+.deadpool::before {
+  --width2: calc(var(--width) * 0.3);
+  --height2: calc((var(--width2) / 3) * 1.5);
+  content: '';
+  position: absolute;
+  top: calc(55% - (var(--height2) / 2));
+  left: calc(20% - (var(--width2) / 2));
+  width: var(--width2);
+  height: var(--height2);
+  background: var(--color2);
+  border-bottom-left-radius: calc(var(--width2) - (var(--width2) / 10));
+  border-bottom-right-radius: calc((var(--width2) / 3) + (var(--width2) / 10));
+  transform: rotate(22deg);
+}
+.deadpool::before {
+  left: calc(80% - (var(--width2) / 2));
+  border-bottom-left-radius: calc((var(--width2) / 3) + (var(--width2) / 10));
+  border-bottom-right-radius: calc(var(--width2) - (var(--width2) / 10));
+  border-top-right-radius: 0;
+  transform: rotate(-22deg);
+  transition: height 0.3s, top 0.3s;
+}
+.deadpool:hover::before {
+  height: 1px;
+  top: calc(55% - (var(--height2) / 2));
 }

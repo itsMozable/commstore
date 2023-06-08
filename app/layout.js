@@ -3,7 +3,7 @@ import './CPFontStyles.scss';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { CookieBanner } from './CookieBanner';
-import AddToCartForm from './products/[exhibitId]/AddToCartForm';
+import { AddToCartForm } from './products/[exhibitId]/AddToCartForm';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,9 +28,13 @@ export default function RootLayout({ children }) {
             <br />
             <Link href="products/samuraiSale">Sale</Link>
             <br />
-            <Link href="/cart" data-test-id="cart-link">
-              cart
-            </Link>
+            <span>
+              <Link
+                href="/cart"
+                data-test-id="cart-link"
+                className="deadpool"
+              ></Link>
+            </span>
           </nav>{' '}
         </header>
         {children}

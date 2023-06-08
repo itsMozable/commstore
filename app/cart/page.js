@@ -71,7 +71,7 @@ export default async function CartPage() {
           <div>
             <Link href="/products/livestock">Continue shopping</Link>
             <br />
-            <button>
+            <button className="cyberpunk2077 purple">
               <Link href="/cart/checkout" data-test-id="cart-checkout">
                 Checkout
               </Link>
