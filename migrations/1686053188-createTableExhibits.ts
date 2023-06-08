@@ -1,14 +1,5 @@
 import { Sql } from 'postgres';
 
-export type Exhibit = {
-  id: number;
-  name: string;
-  type: string;
-  price: string;
-  img: string;
-  alt: string;
-};
-
 export async function up(sql: Sql) {
   await sql`
   CREATE TABLE exhibits(

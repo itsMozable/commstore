@@ -24,7 +24,9 @@ export default function AddToCartForm(props: Props) {
         type="number"
         min="1"
         value={quantity}
-        onChange={handleChange}
+        onChange={(event: ChangeEvent<HTMLInputElement>) =>
+          setQuantity(Number(event.currentTarget.value))
+        }
       />
       {/* Instead of using onClick we use formAction */}
 

@@ -1,6 +1,6 @@
 import { Sql } from 'postgres';
 
-export const exhibits = [
+export const allExhibits = [
   {
     id: 1,
     name: 'Exhibit-1',
@@ -45,7 +45,7 @@ export type Exhibit = {
 };
 
 export async function up(sql: Sql) {
-  for (const exhibit of exhibits) {
+  for (const exhibit of allExhibits) {
     await sql`
     INSERT INTO exhibits
      (name, type, price, img, alt) VALUES(${exhibit.name}, ${exhibit.type}, ${exhibit.price}, ${exhibit.img}, ${exhibit.alt})
@@ -53,7 +53,7 @@ export async function up(sql: Sql) {
   }
 }
 export async function down(sql: Sql) {
-  for (const exhibit of exhibits) {
+  for (const exhibit of allExhibits) {
     await sql`
   DELETE FROM exhibits WHERE id = ${exhibit.id}
   `;

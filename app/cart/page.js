@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { lsExhibits } from '../../database/exhibits';
+import { allExhibits } from '../../migrations/1686054100-insertExhibits';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import ChangeItemQuantity from './changeItemQuantity';
@@ -8,7 +8,7 @@ import RemoveItems from './removeItems';
 export const dynamic = 'force-dynamic';
 
 export default async function CartPage() {
-  const exhibits = await lsExhibits;
+  const exhibits = await allExhibits;
   const exhibitQuantityCookie = getCookie('cart');
   const exhibitQuantities = !exhibitQuantityCookie
     ? []

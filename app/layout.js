@@ -18,19 +18,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="cpHeader">
-          <Link href="/">Home</Link>
-          <br />
-          <Link href="products/livestock" data-test-id="products-link">
-            Livestock
-          </Link>
-          <br />
-          <Link href="products/samuraiSale">Sale</Link>
-          <br />
-          <Link href="/cart" data-test-id="cart-link">
-            🛒
-          </Link>
-        </nav>{' '}
+        <header>
+          <nav className="cpHeader">
+            <Link href="/">Home</Link>
+            <br />
+            <Link href="products/livestock" data-test-id="products-link">
+              Livestock
+            </Link>
+            <br />
+            <Link href="products/samuraiSale">Sale</Link>
+            <br />
+            <Link href="/cart" data-test-id="cart-link">
+              cart
+            </Link>
+          </nav>{' '}
+        </header>
         {children}
         <CookieBanner />
         <footer> See you in the Afterlife Mozi </footer>
