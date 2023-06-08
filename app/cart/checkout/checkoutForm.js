@@ -16,17 +16,26 @@ export default function CheckoutPage() {
   const [securityCode, setSecurityCode] = useState('');
 
   function validate() {
+    if (firstName.length < 2) {
+      return 'Field cannot be empty';
+      if (!firstName.match(/^[a-zA-Z]+$/)) {
+        return 'Field can only contain letters';
+        if (firstName.match(/\d+/)) {
+          return 'Field cannot contain numbers';
+        }
+      }
+    }
     return (
-      firstName.length &&
-      lastName.length &&
-      email.length &&
-      adress.length &&
-      city.length &&
-      postCode.length &&
-      country.length &&
-      creditCard.length &&
-      expiration.length &&
-      securityCode.length
+      firstName.length === 0 &&
+      lastName.length === 0 &&
+      email.length === 0 &&
+      adress.length === 0 &&
+      city.length === 0 &&
+      postCode.length === 0 &&
+      country.length === 0 &&
+      creditCard.length === 0 &&
+      expiration.length === 0 &&
+      securityCode.length === 0
     );
   }
 

@@ -429,8 +429,8 @@ a.cyberpunk2077:focus:before {
   position: relative;
   display: inline-block;
 
-  --color1: #ff1a21;
-  --color2: #fff;
+  --color1: var(--red-color);
+  --color2: var(--blue);
   --colorbg: #000;
   --barwidth: calc(var(--width) * 0.09);
   border-radius: 100%;
