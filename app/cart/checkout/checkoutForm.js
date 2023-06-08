@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import cartPage from '../../cart/page';
+import cartPage from '../page';
 
 export default function CheckoutPage() {
   const [firstName, setFirstName] = useState('');
@@ -26,16 +26,16 @@ export default function CheckoutPage() {
       }
     }
     return (
-      firstName.length === 0 &&
-      lastName.length === 0 &&
-      email.length === 0 &&
-      adress.length === 0 &&
-      city.length === 0 &&
-      postCode.length === 0 &&
-      country.length === 0 &&
-      creditCard.length === 0 &&
-      expiration.length === 0 &&
-      securityCode.length === 0
+      firstName.length &&
+      lastName.length &&
+      email.length &&
+      adress.length &&
+      city.length &&
+      postCode.length &&
+      country.length &&
+      creditCard.length &&
+      expiration.length &&
+      securityCode.length
     );
   }
 
